@@ -16,7 +16,7 @@ import gallery_icon from "./gallery_icon.png";
 import gallery_icon_dark from "./gallery_icon_dark.png";
 import mic_icon from "./mic_icon.png";
 import mic_icon_dark from "./mic_icon_dark.png";
-import user_icon from "./user_icon.png";
+import user_icon from "./user_icon.jpg";
 import message_icon from "./message_icon.png";
 import message_icon_dark from "./message_icon_dark.png";
 import code_icon from "./code_icon.png";

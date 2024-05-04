@@ -2,6 +2,7 @@ import React, { useContext, useEffect, useRef } from "react"; // Import React an
 import "./Main_gemini.css"; // Import CSS file
 import { assets } from "../../assets/assets"; // Import assets
 import { Context } from "../../context/context"; // Import Context
+// import Sidebar from "../Sidebar/Sidebar";
 
 // Define the Main_gemini component
 const Main_gemini = () => {
@@ -17,7 +18,9 @@ const Main_gemini = () => {
         setRecentprompt,
         darkMode,
         toggleDarkMode,
-        isSmallScreen
+        isSmallScreen,
+        setextended,
+        extended
     } = useContext(Context);
 
     // Function to load prompt
@@ -44,8 +47,22 @@ const Main_gemini = () => {
     // Render the Main_gemini component
     return (
         <div className={`Main-gemini ${darkMode ? "Main-dark" : ""}`}>
+        {isSmallScreen&&extended ? <><div>sidebar</div></>:null}
             <div className="nav">
-                <p>Gemini</p>
+                {isSmallScreen ? (
+                    <img
+                        onClick={() => setextended((extended) => !extended)}
+                        className="menu"
+                        draggable="false"
+                        src={
+                            !darkMode ? assets.menu_icon : assets.menu_icon_dark
+                        }
+                        alt="menu_icon"
+                    />
+                ) : (
+                    <p>Gemini</p>
+                )}
+
                 <img
                     onClick={toggleDarkMode}
                     draggable="false"
@@ -100,7 +117,11 @@ const Main_gemini = () => {
                                 </p>
                                 <img
                                     draggable="false"
-                                    src={!darkMode ? assets.bulb_icon : assets.bulb_icon_dark}
+                                    src={
+                                        !darkMode
+                                            ? assets.bulb_icon
+                                            : assets.bulb_icon_dark
+                                    }
                                     alt=""
                                 />
                             </div>
@@ -117,7 +138,11 @@ const Main_gemini = () => {
                                     work retreat
                                 </p>
                                 <img
-                                    src={!darkMode ? assets.message_icon:assets.menu_icon_dark}
+                                    src={
+                                        !darkMode
+                                            ? assets.message_icon
+                                            : assets.menu_icon_dark
+                                    }
                                     draggable="false"
                                     alt=""
                                 />
@@ -133,7 +158,11 @@ const Main_gemini = () => {
                                 <p>Tell me about React js and React native</p>
                                 <img
                                     draggable="false"
-                                    src={!darkMode ? assets.code_icon:assets.code_icon_dark}
+                                    src={
+                                        !darkMode
+                                            ? assets.code_icon
+                                            : assets.code_icon_dark
+                                    }
                                     alt=""
                                 />
                             </div>
@@ -180,19 +209,31 @@ const Main_gemini = () => {
                         />
                         <div>
                             <img
-                                src={!darkMode ? assets.gallery_icon:assets.gallery_icon_dark}
+                                src={
+                                    !darkMode
+                                        ? assets.gallery_icon
+                                        : assets.gallery_icon_dark
+                                }
                                 draggable="false"
                                 alt=""
                             />
                             <img
-                                src={!darkMode ? assets.mic_icon:assets.mic_icon_dark}
+                                src={
+                                    !darkMode
+                                        ? assets.mic_icon
+                                        : assets.mic_icon_dark
+                                }
                                 draggable="false"
                                 alt=""
                             />
                             {input && (
                                 <img
                                     onClick={() => onSent()}
-                                    src={!darkMode ? assets.send_icon:assets.send_icon_dark}
+                                    src={
+                                        !darkMode
+                                            ? assets.send_icon
+                                            : assets.send_icon_dark
+                                    }
                                     draggable="false"
                                     alt=""
                                 />

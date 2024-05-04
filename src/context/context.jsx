@@ -14,6 +14,7 @@ const ContextProvider = (props) => {
     const [resultData, setResultData] = useState("");
     const [darkMode, setDarkMode] = useState(false); // New state variable for dark mode
     const [isSmallScreen, setIsSmallScreen] = useState(false); // smaell screan responsive
+    const [extended, setextended] = useState(false); // State for managing sidebar extension
 
     //smaell screan responsive
 
@@ -139,6 +140,8 @@ const ContextProvider = (props) => {
         darkMode,
         toggleDarkMode,
         isSmallScreen,
+        extended,
+        setextended,
     };
 
     // Render the context provider with its children

@@ -5,12 +5,17 @@ import { Context } from "../../context/context";// Import Context
 
 // Define the Sidebar component
 const Sidebar = () => {
-    // State for managing sidebar extension
-    const [extended, setextended] = useState(false);
 
     // Destructure necessary values from the context
-    const { onSent, previosPrompt, setRecentprompt, newChat, darkMode } =
-        useContext(Context);
+    const {
+        onSent,
+        previosPrompt,
+        setRecentprompt,
+        newChat,
+        darkMode,
+        extended,
+        setextended,
+    } = useContext(Context);
 
     // Function to load prompt
     const lodePrompt = async (prompt) => {
