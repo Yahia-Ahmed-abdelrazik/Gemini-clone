@@ -1,0 +1,259 @@
+.Main-gemini {
+    flex: 1;
+    min-height: 100vh;
+    padding-bottom: 15px;
+    position: relative;
+    transition: all .3s ease-in-out;
+}
+
+.Main-dark {
+    background: #131314 !important;
+    color: #e3e3e3 !important;
+    transition: all .3s ease-in-out;
+
+    .nav p {
+        color: #e3e3e3 !important;
+    }
+
+    .card {
+        background-color: #1e1f20 !important;
+        transition: all .3s ease-in-out;
+
+        p {
+            color: #e3e3e3 !important;
+            transition: all .3s ease-in-out;
+        }
+
+        img {
+            background-color: #131314 !important;
+            transition: all .3s ease-in-out;
+        }
+
+        &:hover {
+            background-color: #373a39 !important;
+        }
+    }
+
+    .serch-box {
+        background-color: #1e1f20 !important;
+        transition: all .3s ease-in-out;
+
+        input {
+            color: #e3e3e3 !important;
+        }
+
+    }
+}
+
+
+.Main-gemini .nav {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px;
+    font-size: 22px;
+    color: #585858;
+}
+
+.Main-gemini .nav img {
+    width: 40px;
+    border-radius: 50%;
+}
+
+.Main-container {
+    max-width: 900px;
+    margin: auto;
+}
+
+.Main-container .Hello {
+    margin: 50px 0px;
+    font-size: 56px;
+    color: #c4c7c5;
+    font-weight: 500;
+    padding: 20px;
+}
+
+.Main-container .Hello span {
+    background: -webkit-linear-gradient(16deg, #4b90ff, #ff5546);
+    -webkit-text-fill-color: transparent;
+    -webkit-background-clip: text;
+}
+
+.Main-gemini .cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 15px;
+    padding: 20px;
+}
+
+.Main-gemini .card {
+    height: 200px;
+    padding: 15px;
+    background-color: #f0f4f9;
+    border-radius: 10px;
+    position: relative;
+    cursor: pointer;
+    transition: all .3s ease-in-out;
+
+    &:hover {
+        background-color: #dfe4ea;
+    }
+}
+
+.Main-gemini .card img {
+    width: 35px;
+    padding: 5px;
+    position: absolute;
+    background-color: white;
+    border-radius: 20px;
+    bottom: 10px;
+    right: 10px;
+    transition: all .3s ease-in-out;
+}
+
+.Main-gemini .card p {
+    color: #585858;
+    font-size: 17px;
+}
+
+.Main-gemini .Main-bottom {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    max-width: 900px;
+    padding: 0px 20px;
+    margin: auto;
+}
+
+.Main-bottom .serch-box {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 20px;
+    background-color: #f0f4f9;
+    padding: 10px 20px;
+    border-radius: 50px;
+    transition: all .3s ease-in-out;
+}
+
+.serch-box img {
+    width: 24px;
+    cursor: pointer;
+}
+
+.serch-box input {
+    flex: 1;
+    background: transparent;
+    outline: none;
+    border: none;
+    padding: 8px;
+    font-size: 18px;
+}
+
+.serch-box div {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.Main-gemini .bottom-info {
+    font-size: 13px;
+    margin: 15px auto;
+    text-align: center;
+    font-weight: 300;
+}
+
+.result {
+    padding: 0px 5%;
+    max-height: 70vh;
+    overflow-y: scroll;
+}
+
+.result::-webkit-scrollbar {
+    display: none;
+}
+
+.result-title {
+    margin: 14px 0px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+.result img {
+    border-radius: 50%;
+    width: 40px;
+}
+
+.result-data {
+    display: flex;
+    align-items: start;
+    gap: 20px;
+}
+
+.loder {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.loder hr {
+    border-radius: 4px;
+    border: none;
+    background-color: #f6f7f8;
+    background: linear-gradient(to right, #9ed7ff, #ffffff, #9ed7ff);
+    background-size: 800px 50px;
+    height: 20px;
+    animation: loder 3s infinite linear;
+}
+
+.result-dark .loder hr {
+    background-color: #d17314 !important;
+    background: linear-gradient(to right, #bc55c0, #38cd4e, #bc55c0) !important;
+    animation: loder 3s infinite linear !important;
+}
+
+@keyframes loder {
+    0% {
+        background-position: -800px 0px;
+    }
+
+    100% {
+        background-position: 800px 0px;
+    }
+}
+
+.result-data p {
+    font-size: 17px;
+    font-weight: 300;
+    line-height: 1.8;
+}
+
+@media (max-width:600px) {
+
+    .Main-gemini .Main-bottom {
+        position: static !important;
+    }
+
+    .Main-gemini .pp {
+        position: absolute !important;
+    }
+
+    .Main-bottom input {
+        flex: none;
+        width: 150px;
+    }
+
+    .Main-bottom img {
+        width: 20px;
+    }
+
+    .serch-box {
+        padding: 5px 10px;
+    }
+
+    .serch-box div {
+        gap: 5px;
+    }
+}
